@@ -1,0 +1,69 @@
+INFORMATION SECURITY LAB EXAM - 30 MINUTE STRATEGY
+
+BEFORE INTERNET CUTOFF
+1. Activate the venv.
+2. Install:
+   pip install pycryptodome numpy sympy cryptography
+3. Verify imports.
+4. Save all .py files locally.
+5. Run every file at least once.
+6. Keep a requirements.txt:
+   pip freeze > requirements.txt
+7. Keep a plain-text cheat sheet containing:
+   - gcd / extended gcd
+   - modular inverse
+   - fast modular exponentiation
+   - CRT
+   - alphabet mapping
+   - RSA equations
+   - ElGamal equations
+   - Rabin equations
+   - DH equations
+   - Bell-LaPadula rules
+   - AES/DES key/IV sizes
+8. Make sure Python can import local modules from the same folders.
+9. Test the combined pipelines with toy parameters.
+
+WHEN QUESTION ARRIVES
+1. Identify the stages.
+2. Write encryption order exactly as given.
+3. Write decryption order in reverse.
+4. Decide whether spaces are ignored/preserved.
+5. Check key sizes:
+   DES = 8 bytes
+   AES-128 = 16 bytes
+   AES-192 = 24 bytes
+   AES-256 = 32 bytes
+6. Check IV:
+   DES CBC = 8 bytes
+   AES CBC = 16 bytes
+7. Check RSA/ElGamal plaintext integer is smaller than modulus p/n.
+8. Print every intermediate stage if asked.
+9. Finish with recovered plaintext + verification.
+
+IMPORTANT MANUAL-SPECIFIC ITEMS
+- Additive key 20
+- Multiplicative key 15
+- Affine (15,20)
+- Vigenere "dollars"
+- Autokey numeric key 7
+- Playfair keyword "GUIDANCE"
+- Hill matrix [03 03; 2 07]
+- DES
+- AES-128/192/256
+- Triple DES
+- DES-CBC
+- AES-CTR
+- RSA
+- ElGamal
+- Rabin
+- Diffie-Hellman
+- ECC / ECDH
+- KDF
+- key rotation / expiry
+- RBAC
+- ABAC
+- Bell-LaPadula
+- MAC / DAC
+- time-based and probabilistic access control
+- RSA vulnerability / factoring demonstration
