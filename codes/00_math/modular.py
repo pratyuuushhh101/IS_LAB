@@ -1,9 +1,11 @@
+# Parameters: a (int), b (int) -> Output: int
 def gcd(a, b):
     while b:
         a, b = b, a % b
     return abs(a)
 
 
+# Parameters: a (int), b (int) -> Output: tuple[int, int, int]
 def extended_gcd(a, b):
     if b == 0:
         return abs(a), 1 if a >= 0 else -1, 0
@@ -14,6 +16,7 @@ def extended_gcd(a, b):
     return g, x, y
 
 
+# Parameters: a (int), m (int) -> Output: int
 def mod_inverse(a, m):
     g, x, _ = extended_gcd(a, m)
     if g != 1:
@@ -21,6 +24,7 @@ def mod_inverse(a, m):
     return x % m
 
 
+# Parameters: base (int), exponent (int), modulus (int) -> Output: int
 def mod_pow(base, exponent, modulus):
     if modulus <= 0:
         raise ValueError("Modulus must be positive.")

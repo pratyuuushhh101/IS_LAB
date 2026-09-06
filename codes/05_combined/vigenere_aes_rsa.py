@@ -19,10 +19,12 @@ from vigenere import encrypt as vig_encrypt, decrypt as vig_decrypt
 from alphabet import ALPHABET_26
 
 
+# Parameters: m (int), n (int), e (int) -> Output: int
 def rsa_encrypt_int(m, n, e):
     return pow(m, e, n)
 
 
+# Parameters: c (int), n (int), d (int) -> Output: int
 def rsa_decrypt_int(c, n, d):
     return pow(c, d, n)
 

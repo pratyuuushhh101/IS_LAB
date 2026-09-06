@@ -3,6 +3,7 @@ from Crypto.Util.Padding import pad, unpad
 import base64
 
 
+# Parameters: text (str), key (str), iv (str) -> Output: str (Base64)
 def aes_cbc_encrypt(text, key, iv):
     cipher = AES.new(key.encode(), AES.MODE_CBC, iv.encode())
     return base64.b64encode(
@@ -10,6 +11,7 @@ def aes_cbc_encrypt(text, key, iv):
     ).decode()
 
 
+# Parameters: ct (str), key (str), iv (str) -> Output: str
 def aes_cbc_decrypt(ct, key, iv):
     cipher = AES.new(key.encode(), AES.MODE_CBC, iv.encode())
     return unpad(
@@ -18,21 +20,25 @@ def aes_cbc_decrypt(ct, key, iv):
     ).decode()
 
 
+# Parameters: text (str), key (str), nonce (str) -> Output: str (Base64)
 def aes_ctr_encrypt(text, key, nonce):
     cipher = AES.new(key.encode(), AES.MODE_CTR, nonce=nonce.encode())
     return base64.b64encode(cipher.encrypt(text.encode())).decode()
 
 
+# Parameters: ct (str), key (str), nonce (str) -> Output: str
 def aes_ctr_decrypt(ct, key, nonce):
     cipher = AES.new(key.encode(), AES.MODE_CTR, nonce=nonce.encode())
     return cipher.decrypt(base64.b64decode(ct)).decode()
 
 
+# Parameters: text (str), key (str), iv (str) -> Output: str (Base64)
 def des_cbc_encrypt(text, key, iv):
     cipher = DES.new(key.encode(), DES.MODE_CBC, iv.encode())
     return base64.b64encode(cipher.encrypt(pad(text.encode(), 8))).decode()
 
 
+# Parameters: ct (str), key (str), iv (str) -> Output: str
 def des_cbc_decrypt(ct, key, iv):
     cipher = DES.new(key.encode(), DES.MODE_CBC, iv.encode())
     return unpad(cipher.decrypt(base64.b64decode(ct)), 8).decode()

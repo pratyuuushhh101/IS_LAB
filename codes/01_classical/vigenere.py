@@ -1,6 +1,7 @@
 from alphabet import choose_alphabet
 
 
+# Parameters: text (str), key (str), alphabet (str) -> Output: str
 def encrypt(text, key, alphabet):
     key = "".join(ch for ch in key if ch in alphabet)
     if not key:
@@ -21,6 +22,7 @@ def encrypt(text, key, alphabet):
     return "".join(result)
 
 
+# Parameters: text (str), key (str), alphabet (str) -> Output: str
 def decrypt(text, key, alphabet):
     key = "".join(ch for ch in key if ch in alphabet)
     if not key:

@@ -1,6 +1,7 @@
 from modular import mod_inverse
 
 
+# Parameters: remainders (list[int]), moduli (list[int]) -> Output: int
 def crt(remainders, moduli):
     if len(remainders) != len(moduli):
         raise ValueError("Remainders and moduli must have the same length.")

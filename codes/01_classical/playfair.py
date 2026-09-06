@@ -1,3 +1,4 @@
+# Parameters: keyword (str) -> Output: list[list[str]]
 def build_matrix(keyword):
     keyword = keyword.upper().replace("J", "I")
     alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
@@ -10,6 +11,7 @@ def build_matrix(keyword):
     return [sequence[i:i + 5] for i in range(0, 25, 5)]
 
 
+# Parameters: matrix (list[list[str]]) -> Output: dict[str, tuple[int, int]]
 def positions(matrix):
     return {
         matrix[r][c]: (r, c)
@@ -18,6 +20,7 @@ def positions(matrix):
     }
 
 
+# Parameters: text (str) -> Output: list[str]
 def prepare_plaintext(text):
     text = "".join(ch for ch in text.upper() if ch.isalpha()).replace("J", "I")
     pairs = []
@@ -39,6 +42,7 @@ def prepare_plaintext(text):
     return pairs
 
 
+# Parameters: a (str), b (str), matrix (list[list[str]]), encrypting (bool) -> Output: tuple[str, str]
 def transform_pair(a, b, matrix, encrypting=True):
     pos = positions(matrix)
     ra, ca = pos[a]
@@ -61,6 +65,7 @@ def transform_pair(a, b, matrix, encrypting=True):
     return matrix[ra][cb], matrix[rb][ca]
 
 
+# Parameters: text (str), keyword (str) -> Output: tuple[str, list[list[str]]]
 def encrypt(text, keyword):
     matrix = build_matrix(keyword)
     pairs = prepare_plaintext(text)
@@ -70,6 +75,7 @@ def encrypt(text, keyword):
     ), matrix
 
 
+# Parameters: text (str), keyword (str) -> Output: tuple[str, list[list[str]]]
 def decrypt(text, keyword):
     matrix = build_matrix(keyword)
     text = "".join(ch for ch in text.upper() if ch.isalpha())

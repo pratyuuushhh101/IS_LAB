@@ -2,7 +2,9 @@ from math import gcd
 from alphabet import choose_alphabet
 
 
+# Parameters: a (int), m (int) -> Output: int
 def mod_inverse(a, m):
+    # Parameters: x (int), y (int) -> Output: tuple[int, int, int]
     def egcd(x, y):
         if y == 0:
             return x, 1, 0
@@ -15,6 +17,7 @@ def mod_inverse(a, m):
     return x % m
 
 
+# Parameters: text (str), a (int), b (int), alphabet (str) -> Output: str
 def encrypt(text, a, b, alphabet):
     n = len(alphabet)
 
@@ -28,6 +31,7 @@ def encrypt(text, a, b, alphabet):
     )
 
 
+# Parameters: text (str), a (int), b (int), alphabet (str) -> Output: str
 def decrypt(text, a, b, alphabet):
     n = len(alphabet)
     a_inv = mod_inverse(a, n)

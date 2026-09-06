@@ -1,6 +1,7 @@
 from alphabet import choose_alphabet
 
 
+# Parameters: text (str), numeric_key (int), alphabet (str) -> Output: str
 def encrypt(text, numeric_key, alphabet):
     n = len(alphabet)
     stream = [numeric_key]
@@ -20,6 +21,7 @@ def encrypt(text, numeric_key, alphabet):
     return "".join(result)
 
 
+# Parameters: text (str), numeric_key (int), alphabet (str) -> Output: str
 def decrypt(text, numeric_key, alphabet):
     n = len(alphabet)
     key_stream = [numeric_key]

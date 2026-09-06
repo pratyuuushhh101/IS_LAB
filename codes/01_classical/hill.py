@@ -3,6 +3,7 @@ from math import gcd
 from alphabet import choose_alphabet
 
 
+# Parameters: matrix (list[list[int]] or np.ndarray), modulus (int) -> Output: np.ndarray
 def matrix_inverse_mod(matrix, modulus):
     matrix = np.array(matrix, dtype=int)
     n = matrix.shape[0]
@@ -47,6 +48,7 @@ def matrix_inverse_mod(matrix, modulus):
     return aug[:, n:]
 
 
+# Parameters: text (str), key_matrix (list[list[int]] or np.ndarray), alphabet (str), encrypting (bool) -> Output: str
 def process(text, key_matrix, alphabet, encrypting=True):
     n = len(alphabet)
     K = np.array(key_matrix, dtype=int) % n

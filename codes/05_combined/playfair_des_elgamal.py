@@ -16,6 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1] / "01_classical"))
 from playfair import encrypt as playfair_encrypt, decrypt as playfair_decrypt
 
 
+# Parameters: m (int), p (int), g (int), y (int), k (int) -> Output: tuple[int, int]
 def elgamal_encrypt(m, p, g, y, k):
     c1 = pow(g, k, p)
     s = pow(y, k, p)
@@ -23,6 +24,7 @@ def elgamal_encrypt(m, p, g, y, k):
     return c1, c2
 
 
+# Parameters: c1 (int), c2 (int), p (int), x (int) -> Output: int
 def elgamal_decrypt(c1, c2, p, x):
     s = pow(c1, x, p)
     return (c2 * pow(s, -1, p)) % p

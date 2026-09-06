@@ -1,6 +1,7 @@
 from alphabet import choose_alphabet
 
 
+# Parameters: text (str), key (int), alphabet (str) -> Output: str
 def encrypt(text, key, alphabet):
     n = len(alphabet)
     result = ""
@@ -14,6 +15,7 @@ def encrypt(text, key, alphabet):
     return result
 
 
+# Parameters: text (str), key (int), alphabet (str) -> Output: str
 def decrypt(text, key, alphabet):
     return encrypt(text, -key, alphabet)
 

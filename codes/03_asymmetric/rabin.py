@@ -1,15 +1,18 @@
 from math import gcd
 
 
+# Parameters: a1 (int), m1 (int), a2 (int), m2 (int) -> Output: int
 def crt_pair(a1, m1, a2, m2):
     inv = pow(m1, -1, m2)
     return (a1 + m1 * ((a2 - a1) * inv % m2)) % (m1 * m2)
 
 
+# Parameters: m (int), n (int) -> Output: int
 def encrypt(m, n):
     return (m * m) % n
 
 
+# Parameters: ciphertext (int), p (int), q (int) -> Output: list[int]
 def decrypt(ciphertext, p, q):
     if p % 4 != 3 or q % 4 != 3:
         raise ValueError("Rabin requires p and q congruent to 3 modulo 4.")

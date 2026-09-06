@@ -3,6 +3,7 @@ from Crypto.Util.Padding import pad, unpad
 import base64
 
 
+# Parameters: plaintext (str), key (str) -> Output: str (Base64)
 def encrypt(plaintext, key):
     key = key.encode()
     if len(key) != 8:
@@ -13,6 +14,7 @@ def encrypt(plaintext, key):
     return base64.b64encode(ciphertext).decode()
 
 
+# Parameters: ciphertext_b64 (str), key (str) -> Output: str
 def decrypt(ciphertext_b64, key):
     key = key.encode()
     cipher = DES.new(key, DES.MODE_ECB)

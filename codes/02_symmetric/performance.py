@@ -3,6 +3,7 @@ from Crypto.Cipher import AES, DES
 from Crypto.Util.Padding import pad
 
 
+# Parameters: None -> Output: None
 def benchmark():
     text = "Performance Testing of Encryption Algorithms" * 1000
 

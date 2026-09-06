@@ -2,6 +2,7 @@ import hashlib
 import os
 
 
+# Parameters: password (str), salt (bytes), iterations (int), length (int) -> Output: bytes
 def derive_key(password, salt, iterations=100000, length=32):
     password = password.encode()
     return hashlib.pbkdf2_hmac(

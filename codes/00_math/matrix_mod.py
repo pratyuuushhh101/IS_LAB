@@ -2,6 +2,7 @@ import numpy as np
 from modular import mod_inverse
 
 
+# Parameters: matrix (list[list[int]] or np.ndarray), modulus (int) -> Output: np.ndarray
 def matrix_mod_inverse(matrix, modulus):
     matrix = np.array(matrix, dtype=int)
     n = matrix.shape[0]

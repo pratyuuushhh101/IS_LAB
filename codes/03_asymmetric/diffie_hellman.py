@@ -1,14 +1,17 @@
 import secrets
 
 
+# Parameters: p (int) -> Output: int
 def generate_private_key(p):
     return secrets.randbelow(p - 2) + 1
 
 
+# Parameters: g (int), private (int), p (int) -> Output: int
 def public_key(g, private, p):
     return pow(g, private, p)
 
 
+# Parameters: other_public (int), private (int), p (int) -> Output: int
 def shared_secret(other_public, private, p):
     return pow(other_public, private, p)
 

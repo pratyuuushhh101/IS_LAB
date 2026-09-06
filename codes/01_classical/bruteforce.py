@@ -1,6 +1,7 @@
 from alphabet import ALPHABET_26
 
 
+# Parameters: ciphertext (str) -> Output: None
 def additive_bruteforce(ciphertext):
     print("Additive cipher brute force:")
     for key in range(len(ALPHABET_26)):
@@ -13,6 +14,7 @@ def additive_bruteforce(ciphertext):
         print(f"key={key:2}: {plaintext}")
 
 
+# Parameters: cipher_pair (str), plain_pair (str) -> Output: Generator[tuple[int, int]]
 def affine_from_known_pair(cipher_pair, plain_pair):
     # Given plaintext "ab" -> ciphertext "GL", solve:
     # c = a*x + b mod 26.

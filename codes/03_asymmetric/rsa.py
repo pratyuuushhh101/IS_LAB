@@ -3,7 +3,9 @@ from secrets import randbelow
 from sympy import nextprime
 
 
+# Parameters: a (int), m (int) -> Output: int
 def mod_inverse(a, m):
+    # Parameters: x (int), y (int) -> Output: tuple[int, int, int]
     def egcd(x, y):
         if y == 0:
             return x, 1, 0
@@ -16,6 +18,7 @@ def mod_inverse(a, m):
     return x % m
 
 
+# Parameters: p (int), q (int), e (int) -> Output: tuple[tuple[int, int], tuple[int, int]]
 def generate_keypair(p, q, e=65537):
     n = p * q
     phi = (p - 1) * (q - 1)
@@ -29,6 +32,7 @@ def generate_keypair(p, q, e=65537):
     return (n, e), (n, d)
 
 
+# Parameters: m (int), public_key (tuple[int, int]) -> Output: int
 def encrypt_int(m, public_key):
     n, e = public_key
     if not 0 <= m < n:
@@ -36,15 +40,18 @@ def encrypt_int(m, public_key):
     return pow(m, e, n)
 
 
+# Parameters: c (int), private_key (tuple[int, int]) -> Output: int
 def decrypt_int(c, private_key):
     n, d = private_key
     return pow(c, d, n)
 
 
+# Parameters: text (str) -> Output: int
 def text_to_int(text):
     return int.from_bytes(text.encode(), "big")
 
 
+# Parameters: value (int) -> Output: str
 def int_to_text(value):
     length = max(1, (value.bit_length() + 7) // 8)
     return value.to_bytes(length, "big").decode()

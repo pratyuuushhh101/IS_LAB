@@ -2,6 +2,7 @@
 # Add stages in the order required by the question.
 # Decryption MUST apply stages in reverse order.
 
+# Parameters: data (Any), stages (list[tuple[str, Callable]]) -> Output: Any
 def apply_pipeline(data, stages):
     for name, function in stages:
         data = function(data)
@@ -9,6 +10,7 @@ def apply_pipeline(data, stages):
     return data
 
 
+# Parameters: data (Any), stages (list[tuple[str, Callable]]) -> Output: Any
 def apply_reverse_pipeline(data, stages):
     for name, function in reversed(stages):
         data = function(data)

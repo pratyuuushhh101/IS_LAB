@@ -1,3 +1,4 @@
+# Parameters: text (str), key (str) -> Output: str
 def columnar_encrypt(text, key):
     text = "".join(text.split())
     key = key.upper()
@@ -11,6 +12,7 @@ def columnar_encrypt(text, key):
     return "".join(columns[i] for i in order)
 
 
+# Parameters: ciphertext (str), key (str) -> Output: str
 def columnar_decrypt(ciphertext, key):
     key = key.upper()
     n = len(key)
