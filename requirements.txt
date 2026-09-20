@@ -1,0 +1,55 @@
+# ==============================================================================
+# INFORMATION SECURITY LAB - VIRTUAL ENVIRONMENT REQUIREMENTS
+# ==============================================================================
+#
+# QUICK SETUP COMMANDS:
+# --------------------
+# 1. Create virtual environment:
+#    python3 -m venv venv
+#
+# 2. Activate virtual environment:
+#    Linux/macOS: source venv/bin/activate
+#    Windows:     .\venv\Scripts\activate
+#
+# 3. Install required packages:
+#    pip install -r requirements.txt
+#
+# ==============================================================================
+# EXTERNAL PACKAGES (Install via pip)
+# ==============================================================================
+
+# Core Cryptographic Library:
+# Provides AES, DES, DES3, RSA keygen/OAEP, PKCS1_v1_5 signatures, padding, etc.
+pycryptodome>=3.20.0
+
+# Asymmetric / Modern Cryptography:
+# Used for Elliptic Curve Cryptography (ECC), ECDH, and Hazmat primitives
+cryptography>=42.0.0
+
+# Mathematical Foundations & Number Theory:
+# Used for modular inverses, primality testing (isprime, nextprime), Chinese Remainder Theorem
+sympy>=1.12
+
+# Numerical & Matrix Operations:
+# Used for Hill cipher matrix multiplication, determinants, and matrix inversions mod 26
+numpy>=1.26.0
+
+
+# ==============================================================================
+# STANDARD LIBRARY MODULES (Built into Python - NO pip install needed)
+# ==============================================================================
+#
+# The following modules are part of Python's standard library and do NOT need
+# to be installed via pip. You can import them directly in any Python script:
+#
+# - hashlib   : SHA-256, SHA-512, MD5 hashing
+# - pickle    : Binary serialization for storing keys, ciphertexts, signatures
+# - json      : Structured serialization for records
+# - datetime  : Generating audit timestamps
+# - math      : gcd, pow, sqrt, floor, ceil
+# - secrets   : Cryptographically secure pseudo-random number generator
+# - random    : Educational randomness (randint, choice)
+# - base64    : Encoding byte ciphertexts into readable ASCII strings
+# - os        : File path checks, file operations, random byte generation (os.urandom)
+# - sys       : System exit, argv, path manipulations
+# ==============================================================================
